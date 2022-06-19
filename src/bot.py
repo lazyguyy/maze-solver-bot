@@ -11,12 +11,10 @@ logging.basicConfig(
 )
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    await context.bot.send_message(
-        chat_id=update.effective_chat.id,
-        text="Send me a picture of a 2d maze so I can try to solve it."
-    )
+    await context.bot.send_message(chat_id=update.effective_chat.id, text="Send me a picture of a 2d maze so I can try to solve it.")
 
 async def solve_maze(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    context.bot.send_chat_action(chat_id=chat_id, action=telegram.ChatAction.TYPING)
     print(f"photo available in {', '.join(map(lambda p: f'{p.width}x{p.height}',  update.message.photo))}")
     file_id = max(update.message.photo, key=lambda p: p.width * p.height)
     print(f"image received: {file_id.file_id}")
