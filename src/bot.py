@@ -31,7 +31,8 @@ async def solve_maze(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 if __name__ == "__main__":
     with open("token") as file:
-        token = file.read()
+        token = file.read().strip()
+    print(token)
     application = ApplicationBuilder().token(token).build()
 
     start_handler = CommandHandler('start', start)
