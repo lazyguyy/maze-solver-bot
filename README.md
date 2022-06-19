@@ -9,7 +9,7 @@ If you want to test the bot, there might be an instance running on my raspberry 
 
 # Running it locally
 Most of the important code is contained in ``solver.py``. To run it, you need to have the python libraries ``Pillow``, ``numpy`` and ``matplotlib`` installed.  
-If you want to run an instance on telegram, you also need the ``telegram-bot-ext`` packages (at least v20) and a bot auth token, which you can request from the [@botfather](https://telegram.me/botfather) and have to put in a file called ``token`` in same directory as ``bot.py``.
+If you want to run an instance on telegram, you also need the ``python-telegram-bot`` packages (at least v20) and a bot auth token, which you can request from the [@botfather](https://telegram.me/botfather) and have to put in a file called ``token`` in same directory as ``bot.py``.
 
 # How it works
 ``bot.py`` simply uses the python telegram interface and all it does is downloading sent images and forwarding them to the solver itself. Note that for laziness reasons files are saved locally and won't be cleaned up automatically.  
